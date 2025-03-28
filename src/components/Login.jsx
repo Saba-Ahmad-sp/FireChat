@@ -6,7 +6,7 @@ const Login = () => {
                 <span className="font-semibold text-2xl tracking-wider font-mono text-[#006A71]">
                   FireChat
                 </span>
-                <span className="font-medium tracking-wide text-[#48A6A7] mb-2">Register</span>
+                <span className="font-medium tracking-wide text-[#48A6A7] mb-2">Login</span>
                 <form className="flex flex-col gap-3.5">
                   <input
                     className="py-1 px-2 border-b-1  text-sm focus:outline-none  focus:border-b-2 focus:border-b-[#9ACBD0]
