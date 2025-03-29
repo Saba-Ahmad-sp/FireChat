@@ -1,11 +1,20 @@
-import Contacts from "./Contacts"
+
+import Contacts from "./Contacts";
 
 const Chats = () => {
   return (
     <>
-    <Contacts/>
+      <div className="overflow-auto">
+        <Contacts />
+        <Contacts />
+        <Contacts />
+        <Contacts />
+        <Contacts />
+        <Contacts />
+        <Contacts />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Chats
+export default Chats;
