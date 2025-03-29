@@ -4,8 +4,8 @@ import Sidebar from "./Sidebar";
 
 const Home = () => {
   return (
-    <div className="bg-gray-700 text-white min-h-screen flex flex-col">
-      <div className="p-10">
+    <div className="bg-[#F2EFE7] text-white min-h-screen w-screen flex flex-col justify-center items-center ">
+      <div className="p-10 min-w-3/4">
         <Navbar />
         <div className="flex flex-1">
           <Sidebar />
