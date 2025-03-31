@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore"; 
+import { toast } from "react-toastify";
 
 
 const Register = () => {
@@ -17,24 +18,24 @@ const Register = () => {
     if (!displayName || !email || !password) return;
 
     try {
-      // Create User
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const user = res.user;
 
-      // Update Profile
       await updateProfile(user, {
         displayName: displayName,
       });
 
-      // Store User in Firestore
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
-        displayName: user.displayName, // Ensure updated profile name is saved
+        displayName: user.displayName,
         email: user.email,
       });
       await setDoc(doc(db, "userChats", user.uid), {});
 
       console.log("User signed up successfully:", user);
+      toast.success("Registered Successfully", {
+        position:"top-center"
+      })
     } catch (error) {
       setErr(true);
       console.error("Error signing up:", error.code, error.message);
@@ -88,12 +89,13 @@ const Register = () => {
             >
               Sign Up
             </button>
-            {err && <span>Something went wrong</span>}
+            
           </form>
           <p className="mt-2 text-xs text-[#006A71]">
             Already Registered? Login
           </p>
         </div>
+        {err && <span>Something went wrong</span>}
       </div>
     </>
   );
