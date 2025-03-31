@@ -7,6 +7,7 @@ import {auth, db} from "./firebase"
 import { doc, getDoc} from "firebase/firestore"
 import { useEffect, useState } from "react";
 
+
 function App() {
   const [userDetails, setUserDetails] = useState(null);
   

@@ -4,6 +4,7 @@ import { auth, db } from "../firebase";
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore"; 
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 
 const Register = () => {
@@ -33,6 +34,7 @@ const Register = () => {
       await setDoc(doc(db, "userChats", user.uid), {});
 
       console.log("User signed up successfully:", user);
+      window.location.href = "/"; 
       toast.success("Registered Successfully", {
         position:"top-center"
       })
@@ -92,7 +94,7 @@ const Register = () => {
             
           </form>
           <p className="mt-2 text-xs text-[#006A71]">
-            Already Registered? Login
+            Already Registered? <Link to="/login">Login</Link>
           </p>
         </div>
         {err && <span>Something went wrong</span>}

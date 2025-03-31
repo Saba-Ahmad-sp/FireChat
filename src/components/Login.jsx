@@ -1,5 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const handleSubmit = async (e) => {
@@ -43,7 +44,7 @@ const Login = () => {
                     Sign In
                   </button>
                 </form>
-                <p className="text-xs text-[#006A71]">Not Registered? Register Now</p>
+                <p className="text-xs text-[#006A71]">Not Registered? <Link to="/register"> Register Now </Link></p>
               </div>
             </div>
     </>
