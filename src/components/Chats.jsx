@@ -26,7 +26,7 @@ const Chats = () => {
   return (
     <>
     {console.log(chats)}
-      {Object.entries(chats)?.map((chat) => (
+      {Object.entries(chats)?.sort((a,b) => b[1].date - a[1].date).map((chat) => (
         <div className="pl-1.5 flex h-14 items-center mt-2" key={chat[0]} onClick={() => handleSelect(chat[1].userInfo)}>
           <div className="bg-blue-400 mt-1 mb-1 w-9 h-9 rounded-full flex justify-center items-center ml-0.5"></div>
           <div className="w-3/4 pl-2">

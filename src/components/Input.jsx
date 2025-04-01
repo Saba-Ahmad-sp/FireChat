@@ -13,6 +13,7 @@ const Input = () => {
   const { data } = useContext(ChatContext);
 
   const handleSend = async () =>{
+    if(!text) return;
 
     if(img){
       return;
@@ -48,6 +49,7 @@ const Input = () => {
         type="text"
         className="h-10 p-2 text-xs focus:outline-none tracking-wide w-2/3 flex-wrap"
         placeholder="Type Something..."
+        value={text}
         onChange={(e) => setText(e.target.value)}
       />
       <div className="flex gap-2">
@@ -58,12 +60,12 @@ const Input = () => {
             className="w-4.5"
           />
         </label>
-        <input
-          id="send-file"
+        {/* <input
           type="file"
           className="hidden"
+          
           onChange={(e) => setImg(e.target.files[0])}
-        />
+        /> */}
         <img
           src="https://www.svgrepo.com/show/528989/gallery-send.svg"
           alt="gallery-logo"
