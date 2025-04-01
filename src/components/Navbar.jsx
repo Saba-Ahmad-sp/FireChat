@@ -20,17 +20,21 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex h-8">
-      <div className="w-1/3 bg-[#27445D] rounded-tl-2xl pl-2 flex items-center">
+    <div className="flex h-12">
+      <div className="w-1/3 bg-[#27445D] rounded-tl-2xl pl-2 flex items-center justify-between">
+        <div className="mr-2">
         <span className="text-[#9ACBD0] font-medium">Fire</span>
-        <span className="text-[#9ACBD0] font-bold ml-0.5">Chat</span>
-        <span className="text-xs ml-2">{userDetails?.displayName}</span>
-        <button className="bg-amber-50 text-black p-1 text-[8px] ml-1 rounded-xl" onClick={handleLogout}>
+        <span className="text-[#9ACBD0] font-bold ">Chat</span>
+        </div>
+        <div className="flex flex-col mr-2">
+        <span className="text-xs">{userDetails?.displayName}</span>
+        <button className="bg-amber-50 text-black p-1 text-[8px]  rounded-xl mt-1" onClick={handleLogout}>
           Logout
         </button>
+        </div>
       </div>
-      <div className="w-2/3 bg-[#48A6A7] text-[#27445D] rounded-tr-2xl flex items-center pl-3 font-semibold">
-        <div>{data.user?.displayName}</div>
+      <div className="w-2/3 bg-[#48A6A7] text-[#27445D] rounded-tr-2xl flex items-center justify-center font-semibold">
+        <div className="bg-[#27445D] rounded-xl px-2 py-0.5 text-sm text-white" >{data.user?.displayName}</div>
       </div>
     </div>
   );

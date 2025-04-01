@@ -77,14 +77,7 @@ const Register = () => {
               type="password"
               placeholder="Password"
             />
-            {/* <input className="hidden" type="file" id="file" />
-            <label
-              className="flex items-center gap-4 px-0.5 mb-1 text-xs text-[#48A6A7]"
-              htmlFor="file"
-            >
-              <img src={Add} className="w-7" alt="add-image-logo" />
-              Add Profile Picture
-            </label> */}
+           
             <button
               className="bg-blue-400 rounded-2xl hover:bg-blue-500 py-1 text-white font-semibold tracking-wider mt-4"
               type="submit"

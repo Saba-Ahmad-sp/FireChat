@@ -4,7 +4,7 @@ import { useAuth } from "./AuthContext";
 export const ChatContext = createContext();
 
 export const ChatContextProvider = ({ children }) => {
-  const { userDetails } = useAuth(); // ✅ Correct way to use useAuth()
+  const { userDetails } = useAuth();
 
   const INITIAL_STATE = {
     chatId: "null",

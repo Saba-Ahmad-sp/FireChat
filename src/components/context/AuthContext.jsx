@@ -1,11 +1,11 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth, db } from "../../firebase"; // ✅ Ensure the correct import path
+import { auth, db } from "../../firebase"; 
 import { doc, getDoc } from "firebase/firestore";
 
-// ✅ Create Auth Context
+
 export const AuthContext = createContext(null);
 
-// ✅ AuthProvider Component
+
 export const AuthProvider = ({ children }) => {
   const [userDetails, setUserDetails] = useState(null);
 
@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          setUserDetails({ uid: user.uid, ...docSnap.data() }); // ✅ Include `uid`
+          setUserDetails({ uid: user.uid, ...docSnap.data() });
         } else {
           console.log("User document not found in Firestore.");
           setUserDetails(null);
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// ✅ Custom Hook to Use Auth Context
+
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {

@@ -27,8 +27,7 @@ const Message = ({ message }) => {
         <div className={`p-2 rounded-lg text-sm max-w-xs ${isSender ? "bg-blue-500 text-white" : "bg-gray-300 text-black"}`}>
           {message.text}
         </div>
-
-        {/* SENDER'S PROFILE IMAGE (For Sent Messages) */}
+        
         <span className="ml-2 text-gray-600 text-xs font-bold">
           {isSender && (
           userDetails.displayName + ":"
