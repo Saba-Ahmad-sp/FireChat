@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
-import { useAuth } from "./context/AuthContext"; // ✅ Import useAuth
+import { useAuth } from "./context/AuthContext"; 
 import { ChatContext } from "./context/ChatContext";
 
 const Chats = () => {
-  const { userDetails } = useAuth(); // ✅ Use useAuth hook
+  const { userDetails } = useAuth(); 
   const [chats, setChats] = useState([]);
   const {dispatch} = useContext(ChatContext)
 
